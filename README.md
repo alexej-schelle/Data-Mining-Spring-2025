@@ -36,13 +36,13 @@ This module focuses on practical applications of algorithms and computational pa
 # Documented Scenarios
 **************************************************************************************************************************************
 
-    Please visit https://www.iu.org/ or ask at alexej.schelle.ext@iu.org.
+    Please visit https://www.iu.org/ or ask at alexej.schelle.ext@iu.org or at aschelle@constructor.university
 
 **************************************************************************************************************************************
 
 # Author
 **************************************************************************************************************************************
 
-   - FH-Doz. Dr. A. Schelle.
+   - Univ.-Doz. Dr. A. Schelle.
   
 **************************************************************************************************************************************
