@@ -3,8 +3,11 @@ import numpy as np
 
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVR
+
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error, r2_score
+
+import numpy as np
 
 # Example: Generate synthetic data for demonstration
 def generate_synthetic_data(num_samples=1000):
@@ -38,10 +41,17 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # Feature scaling
 scaler = StandardScaler()
+
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 # Create and train the SVM model
+
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import mean_squared_error, r2_score
+
+import numpy as np
+
 svm_model = SVR(kernel='rbf', C=1.0, epsilon=0.1)
 svm_model.fit(X_train_scaled, y_train)
 
@@ -52,22 +62,8 @@ y_pred = svm_model.predict(X_test_scaled)
 mse = mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
 
-# Create SVM Model
-
-from sklearn.metrics import mean_squared_error, r2_score
-import numpy as np
-
-# Predict on the test set
-y_pred = svm_model.predict(X_test_scaled)
-
-# Calculate metrics
-mse = mean_squared_error(y_test, y_pred)
-rmse = np.sqrt(mse)
-r2 = r2_score(y_test, y_pred)
-
 # Print the evaluation results
 print(f"Mean Squared Error (MSE): {mse:.2f}")
-print(f"Root Mean Squared Error (RMSE): {rmse:.2f}")
 print(f"R-squared (R²): {r2:.2f}")
 
 # Define a single new data point
@@ -81,7 +77,7 @@ predicted_value = svm_model.predict(new_data_scaled)
 
 print(f"Predicted EnergyConsumption: {predicted_value[0]:.2f}")
 
-# Create Random Forst Model
+# Create Random Forest Model
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
@@ -118,11 +114,11 @@ print(f"Predicted EnergyConsumption (Random Forest): {predicted_value_rf[0]:.2f}
 print(' ')
 print(' ')
 
+# Create and train the K-Nearest Neighbors Regressor
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 
-# Create and train the K-Nearest Neighbors Regressor
 knn_model = KNeighborsRegressor(n_neighbors=5)  # Default: k=5
 knn_model.fit(X_train_scaled, y_train)  # Use scaled data for KNN
 
@@ -154,11 +150,11 @@ print(f"Predicted EnergyConsumption (KNN): {predicted_value_knn[0]:.2f}")
 print(' ')
 print(' ')
 
+# Create and train the Gradient Boosting Regressor
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 
-# Create and train the Gradient Boosting Regressor
 gb_model = GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
 gb_model.fit(X_train, y_train)
 
@@ -188,11 +184,11 @@ print(f"Predicted EnergyConsumption (Gradient Boosting): {predicted_value_gb[0]:
 print(' ')
 print(' ')
 
+# Create and train the Kernel Ridge Regression model
 from sklearn.kernel_ridge import KernelRidge
 from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 
-# Create and train the Kernel Ridge Regression model
 kr_model = KernelRidge(alpha=1.0, kernel='rbf')  # Use Radial Basis Function (RBF) kernel
 kr_model.fit(X_train_scaled, y_train)  # Make sure to scale data for kernel methods
 
@@ -228,11 +224,11 @@ print(f"Predicted EnergyConsumption (Kernel Ridge Regression): {predicted_value_
 print(' ')
 print(' ')
 
+# Create and train the Stochastic Gradient Descent Regressor Model
 from sklearn.linear_model import SGDRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 
-# Create and train the Stochastic Gradient Descent Regressor model
 sgd_model = SGDRegressor(max_iter=1000, tol=1e-3, random_state=42)
 sgd_model.fit(X_train_scaled, y_train)  # Make sure to scale the data as SGD is sensitive to feature scaling
 
