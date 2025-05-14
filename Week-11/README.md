@@ -34,6 +34,7 @@ programmieren, mithilfe derer man ein durch eine Schaltung erzeugtes binäres Si
    - Mert Köktürk
    - Renars Miculis
    - Sarah Rosa Werner
+   - Betül Yurtman
 
    et
 
